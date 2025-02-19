@@ -586,3 +586,47 @@ describe('sumScoreOfChance > กรณีที่สำเร็จ', () => {
     expect(result).toBe(expected)
   })
 })
+
+describe('sumScoreOfYahtzy > กรณีที่สำเร็จ', () => {
+  let yathzee: Yathzee
+
+  beforeEach(() => {
+    yathzee = new Yathzee()
+  })
+
+  it('ต้องได้คะแนน 50 คะแนน เมื่อส่ง dices เป็น [3,3,3,3,3]', () => {
+    // Arrange
+    const dices: TDices = [3, 3, 3, 3, 3]
+    const expected = 50
+
+    // Act
+    const result = yathzee.sumScoreOfYahtzy(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 50 คะแนน เมื่อส่ง dices เป็น [6,6,6,6,6]', () => {
+    // Arrange
+    const dices: TDices = [6, 6, 6, 6, 6]
+    const expected = 50
+
+    // Act
+    const result = yathzee.sumScoreOfYahtzy(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 0 คะแนน เมื่อส่ง dices เป็น [6,6,1,6,6]', () => {
+    // Arrange
+    const dices: TDices = [6, 6, 1, 6, 6]
+    const expected = 0
+
+    // Act
+    const result = yathzee.sumScoreOfYahtzy(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+})

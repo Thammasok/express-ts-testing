@@ -79,6 +79,17 @@ class Yathzee {
   sumScoreOfChance(dices: TDices): number {
     return dices.reduce((sum, die) => sum + die, 0)
   }
+
+  sumScoreOfYahtzy(dices: TDices): number {
+    let count = 0
+    for (let i = 0; i < dices.length; i++) {
+      if (dices[0] === dices[i]) {
+        count++
+      }
+    }
+
+    return count === 5 ? 50 : 0
+  }
 }
 
 export default Yathzee
