@@ -398,4 +398,13 @@ describe('getGrade Alterative Case', () => {
     // Assert
     expect(result).toBe(expected)
   })
+
+  it("should return Invalid Type when score is 29.99", () => {
+    const score = 29.99;
+    const expected = "Invalid Type";
+
+    const result = getGrade(score);
+
+    expect(expected).toBe(result);
+  });
 })

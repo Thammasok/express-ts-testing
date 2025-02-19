@@ -1,5 +1,8 @@
 export const getGrade = (score: number): string => {
   // Validate
+  if (!Number.isInteger(score)) {
+    return 'Invalid Type'
+  }
   if (score < 0 || score > 100) {
     return 'Invalid Input'
   }
@@ -8,7 +11,7 @@ export const getGrade = (score: number): string => {
   if (score >= 80 && score <= 100) {
     return 'A'
   }
-  
+
   if (score >= 75 && score <= 79) {
     return 'B+'
   }
