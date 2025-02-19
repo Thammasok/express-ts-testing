@@ -75,6 +75,10 @@ class Yathzee {
 
     return 0
   }
+
+  sumScoreOfChance(dices: TDices): number {
+    return dices.reduce((sum, die) => sum + die, 0)
+  }
 }
 
 export default Yathzee

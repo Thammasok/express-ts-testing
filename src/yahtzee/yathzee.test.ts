@@ -554,3 +554,35 @@ describe('sumScoreOfStraight > กรณีที่สำเร็จ', () => {
     expect(result).toBe(expected)
   })
 })
+
+describe('sumScoreOfChance > กรณีที่สำเร็จ', () => {
+  let yathzee: Yathzee
+
+  beforeEach(() => {
+    yathzee = new Yathzee()
+  })
+
+  it('ต้องได้คะแนน 13 คะแนน เมื่อส่ง dices เป็น [2,2,3,3,3]', () => {
+    // Arrange
+    const dices: TDices = [2, 2, 3, 3, 3]
+    const expected = 13
+
+    // Act
+    const result = yathzee.sumScoreOfChance(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 15 คะแนน เมื่อส่ง dices เป็น [2,1,3,4,5]', () => {
+    // Arrange
+    const dices: TDices = [2, 1, 3, 4, 5]
+    const expected = 15
+
+    // Act
+    const result = yathzee.sumScoreOfChance(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+})
