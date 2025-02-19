@@ -2,6 +2,12 @@ import Yathzee, { TDices } from './yahthzee'
 
 describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
   describe('target เป็น 1', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
     it('ต้องได้คะแนน 1 คะแนน เมื่อส่ง dices เป็น [1,2,3,4,6] และ target เป็น 1', () => {
       // Arrange
       const dices: TDices = [1, 2, 3, 4, 6]
@@ -9,7 +15,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 1
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -23,7 +28,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 3
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -37,7 +41,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 0
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -46,6 +49,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
   })
 
   describe('target เป็น 2', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
     it('ต้องได้คะแนน 2 คะแนน เมื่อส่ง dices เป็น [3,4,6,2,1] และ target เป็น 2', () => {
       // Arrange
       const dices: TDices = [3, 4, 6, 2, 1]
@@ -53,7 +62,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 2
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -66,7 +74,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 6
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -80,7 +87,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 0
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -89,6 +95,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
   })
 
   describe('target เป็น 3', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
     it('ต้องได้คะแนน 3 คะแนน เมื่อส่ง dices เป็น [1,2,3,4,5] และ target เป็น 3', () => {
       // Arrange
       const dices: TDices = [1, 2, 3, 4, 5]
@@ -96,7 +108,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 3
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -109,7 +120,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 12
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -123,7 +133,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 0
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -132,6 +141,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
   })
 
   describe('target เป็น 4', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
     it('ต้องได้คะแนน 4 คะแนน เมื่อส่ง dices เป็น [1,2,3,4,5] และ target เป็น 4', () => {
       // Arrange
       const dices: TDices = [1, 2, 3, 4, 5]
@@ -139,12 +154,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 4
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
       expect(result).toBe(expected)
     })
+
     it('ต้องได้คะแนน 8 คะแนน เมื่อส่ง dices เป็น [5,2,4,4,5] และ target เป็น 4', () => {
       // Arrange
       const dices: TDices = [5, 2, 4, 4, 5]
@@ -152,7 +167,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 8
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -166,7 +180,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 0
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -175,6 +188,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
   })
 
   describe('target เป็น 5', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
     it('ต้องได้คะแนน 5 คะแนน เมื่อส่ง dices เป็น [1,2,3,4,5] และ target เป็น 5', () => {
       // Arrange
       const dices: TDices = [1, 2, 3, 4, 5]
@@ -182,12 +201,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 5
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
       expect(result).toBe(expected)
     })
+
     it('ต้องได้คะแนน 15 คะแนน เมื่อส่ง dices เป็น [5,2,3,5,5] และ target เป็น 5', () => {
       // Arrange
       const dices: TDices = [5, 2, 3, 5, 5]
@@ -195,7 +214,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 15
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -209,7 +227,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 0
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -218,6 +235,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
   })
 
   describe('target เป็น 6', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
     it('ต้องได้คะแนน 6 คะแนน เมื่อส่ง dices เป็น [4,3,6,1,2] และ target เป็น 6', () => {
       // Arrange
       const dices: TDices = [4, 3, 6, 1, 2]
@@ -225,12 +248,12 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 6
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
       expect(result).toBe(expected)
     })
+
     it('ต้องได้คะแนน 30 คะแนน เมื่อส่ง dices เป็น [6,6,6,6,6] และ target เป็น 6', () => {
       // Arrange
       const dices: TDices = [6, 6, 6, 6, 6]
@@ -238,7 +261,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 30
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -252,7 +274,6 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
       const expected = 0
 
       // Act
-      const yathzee = new Yathzee()
       const result = yathzee.sumScoreByTarget(dices, target)
 
       // Assert
@@ -263,6 +284,11 @@ describe('sumScoreByTarget > กรณีที่สำเร็จ', () => {
 
 describe('sumScoreByTarget > กรณีที่ไม่สำเร็จ', () => {
   describe('ตรวจสอบค่า target กรณีที่ส่งค่าไม่ถูกต้อง', () => {
+    let yahthzee: Yathzee
+    beforeEach(() => {
+      yahthzee = new Yathzee()
+    })
+
     it('ต้องได้ข้อความ Invalid target เมื่อส่ง target เป็น 0', () => {
       // Arrange
       const dices: TDices = [1, 1, 1, 1, 1]
@@ -303,4 +329,3 @@ describe('sumScoreByTarget > กรณีที่ไม่สำเร็จ', 
     })
   })
 })
-
