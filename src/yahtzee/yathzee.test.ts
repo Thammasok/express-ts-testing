@@ -329,3 +329,73 @@ describe('sumScoreByTarget > กรณีที่ไม่สำเร็จ', 
     })
   })
 })
+
+describe('sumScoreOfKind > กรณีที่สำเร็จ', () => {
+  describe('three of a kind', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
+    it('ต้องได้คะแนน 8 คะแนน เมื่อส่ง dices เป็น [2,1,2,1,2] ของ three of a kind', () => {
+      // Arrange
+      const dices: TDices = [2, 1, 2, 1, 2]
+      const target = 3
+      const expected = 8
+
+      // Act
+      const result = yathzee.sumScoreOfKind(dices, target)
+
+      // Assert
+      expect(result).toBe(expected)
+    })
+
+    it('ต้องได้คะแนน 8 คะแนน เมื่อส่ง dices เป็น [1,1,2,2,2] ของ three of a kind', () => {
+      // Arrange
+      const dices: TDices = [1, 1, 2, 2, 2]
+      const target = 3
+      const expected = 8
+
+      // Act
+      const result = yathzee.sumScoreOfKind(dices, target)
+
+      // Assert
+      expect(result).toBe(expected)
+    })
+  })
+
+  describe('four of a kind', () => {
+    let yathzee: Yathzee
+
+    beforeEach(() => {
+      yathzee = new Yathzee()
+    })
+
+    it('ต้องได้คะแนน 17 คะแนน เมื่อส่ง dices เป็น [4,4,4,4,1] ของ four of a kind', () => {
+      // Arrange
+      const dices: TDices = [4, 4, 4, 4, 1]
+      const target = 4
+      const expected = 17
+
+      // Act
+      const result = yathzee.sumScoreOfKind(dices, target)
+
+      // Assert
+      expect(result).toBe(expected)
+    })
+
+    it('ต้องได้คะแนน 17 คะแนน เมื่อส่ง dices เป็น [4,4,1,4,4] ของ four of a kind', () => {
+      // Arrange
+      const dices: TDices = [4, 4, 1, 4, 4]
+      const target = 4
+      const expected = 17
+
+      // Act
+      const result = yathzee.sumScoreOfKind(dices, target)
+
+      // Assert
+      expect(result).toBe(expected)
+    })
+  })
+})

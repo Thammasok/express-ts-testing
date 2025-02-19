@@ -11,6 +11,22 @@ class Yathzee {
 
     return dices.filter((dice) => dice === target).length * target
   }
+
+  sumScoreOfKind(dices: TDices, target: 3 | 4): number {
+    const counts = new Map<number, number>()
+
+    for (const dice of dices) {
+      counts.set(dice, (counts.get(dice) || 0) + 1)
+    }
+
+    for (const [, count] of counts) {
+      if (count >= target) {
+        return dices.reduce((sum, die) => sum + die, 0)
+      }
+    }
+
+    return 0
+  }
 }
 
 export default Yathzee
