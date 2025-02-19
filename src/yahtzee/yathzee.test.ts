@@ -399,3 +399,59 @@ describe('sumScoreOfKind > กรณีที่สำเร็จ', () => {
     })
   })
 })
+
+describe('sumScoreOfFullhouse > กรณีที่สำเร็จ', () => {
+  let yathzee: Yathzee
+
+  beforeEach(() => {
+    yathzee = new Yathzee()
+  })
+
+  it('ต้องได้คะแนน 25 คะแนน เมื่อส่ง dices เป็น [2,2,3,3,3]', () => {
+    // Arrange
+    const dices: TDices = [2, 2, 3, 3, 3]
+    const expected = 25
+
+    // Act
+    const result = yathzee.sumScoreOfFullhouse(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 25 คะแนน เมื่อส่ง dices เป็น [2,3,3,3,2]', () => {
+    // Arrange
+    const dices: TDices = [2, 3, 3, 3, 2]
+    const expected = 25
+
+    // Act
+    const result = yathzee.sumScoreOfFullhouse(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 25 คะแนน เมื่อส่ง dices เป็น [3,2,3,2,3]', () => {
+    // Arrange
+    const dices: TDices = [3, 2, 3, 2, 3]
+    const expected = 25
+
+    // Act
+    const result = yathzee.sumScoreOfFullhouse(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 25 คะแนน เมื่อส่ง dices เป็น [3,2,3,1,3]', () => {
+    // Arrange
+    const dices: TDices = [3, 2, 3, 1, 3]
+    const expected = 0
+
+    // Act
+    const result = yathzee.sumScoreOfFullhouse(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+})

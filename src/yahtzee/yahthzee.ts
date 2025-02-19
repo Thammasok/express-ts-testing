@@ -27,6 +27,21 @@ class Yathzee {
 
     return 0
   }
+
+  sumScoreOfFullhouse(dices: TDices): number {
+    const counts = new Map<number, number>()
+
+    for (const dice of dices) {
+      counts.set(dice, (counts.get(dice) || 0) + 1)
+    }
+
+    const values = Array.from(counts.values())
+    if (values.includes(3) && values.includes(2)) {
+      return 25
+    }
+
+    return 0
+  }
 }
 
 export default Yathzee
