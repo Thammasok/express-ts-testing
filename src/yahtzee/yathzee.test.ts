@@ -443,13 +443,112 @@ describe('sumScoreOfFullhouse > กรณีที่สำเร็จ', () => 
     expect(result).toBe(expected)
   })
 
-  it('ต้องได้คะแนน 25 คะแนน เมื่อส่ง dices เป็น [3,2,3,1,3]', () => {
+  it('ต้องได้คะแนน 0 คะแนน เมื่อส่ง dices เป็น [3,2,3,1,3]', () => {
     // Arrange
     const dices: TDices = [3, 2, 3, 1, 3]
     const expected = 0
 
     // Act
     const result = yathzee.sumScoreOfFullhouse(dices)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+})
+
+describe('sumScoreOfStraight > กรณีที่สำเร็จ', () => {
+  let yathzee: Yathzee
+
+  beforeEach(() => {
+    yathzee = new Yathzee()
+  })
+
+  it('ต้องได้คะแนน 30 คะแนน เมื่อส่ง dices เป็น [1,2,3,4,6] และ target เป็น small', () => {
+    // Arrange
+    const dices: TDices = [1, 2, 3, 4, 6]
+    const target = 'small'
+    const expected = 30
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 30 คะแนน เมื่อส่ง dices เป็น [3,2,4,4,5] และ target เป็น small', () => {
+    // Arrange
+    const dices: TDices = [3, 2, 4, 4, 5]
+    const target = 'small'
+    const expected = 30
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 30 คะแนน เมื่อส่ง dices เป็น [3,6,4,1,5] และ target เป็น small', () => {
+    // Arrange
+    const dices: TDices = [3, 6, 4, 1, 5]
+    const target = 'small'
+    const expected = 30
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 0 คะแนน เมื่อส่ง dices เป็น [1,2,3,5,6] และ target เป็น small', () => {
+    // Arrange
+    const dices: TDices = [1, 2, 3, 5, 6]
+    const target = 'small'
+    const expected = 0
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 40 คะแนน เมื่อส่ง dices เป็น [2,3,4,5,6] และ target เป็น large', () => {
+    // Arrange
+    const dices: TDices = [2, 3, 4, 5, 6]
+    const target = 'large'
+    const expected = 40
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 40 คะแนน เมื่อส่ง dices เป็น [1,4,3,2,5] และ target เป็น large', () => {
+    // Arrange
+    const dices: TDices = [1, 4, 3, 2, 5]
+    const target = 'large'
+    const expected = 40
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
+
+    // Assert
+    expect(result).toBe(expected)
+  })
+
+  it('ต้องได้คะแนน 0 คะแนน เมื่อส่ง dices เป็น [2,3,1,5,6] และ target เป็น large', () => {
+    // Arrange
+    const dices: TDices = [2, 3, 1, 5, 6]
+    const target = 'large'
+    const expected = 0
+
+    // Act
+    const result = yathzee.sumScoreOfStraight(dices, target)
 
     // Assert
     expect(result).toBe(expected)
