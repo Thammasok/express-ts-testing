@@ -330,7 +330,7 @@ describe('sumScoreByTarget > กรณีที่ไม่สำเร็จ', 
   })
 })
 
-describe('sumScoreOfKind > กรณีที่สำเร็จ', () => {
+describe('sumScoreOfKind', () => {
   describe('three of a kind', () => {
     let yathzee: Yathzee
 
@@ -400,7 +400,7 @@ describe('sumScoreOfKind > กรณีที่สำเร็จ', () => {
   })
 })
 
-describe('sumScoreOfFullhouse > กรณีที่สำเร็จ', () => {
+describe('sumScoreOfFullhouse', () => {
   let yathzee: Yathzee
 
   beforeEach(() => {
@@ -456,7 +456,7 @@ describe('sumScoreOfFullhouse > กรณีที่สำเร็จ', () => 
   })
 })
 
-describe('sumScoreOfStraight > กรณีที่สำเร็จ', () => {
+describe('sumScoreOfStraight', () => {
   let yathzee: Yathzee
 
   beforeEach(() => {
@@ -555,7 +555,7 @@ describe('sumScoreOfStraight > กรณีที่สำเร็จ', () => {
   })
 })
 
-describe('sumScoreOfChance > กรณีที่สำเร็จ', () => {
+describe('sumScoreOfChance', () => {
   let yathzee: Yathzee
 
   beforeEach(() => {
@@ -587,7 +587,7 @@ describe('sumScoreOfChance > กรณีที่สำเร็จ', () => {
   })
 })
 
-describe('sumScoreOfYahtzy > กรณีที่สำเร็จ', () => {
+describe('sumScoreOfYahtzy', () => {
   let yathzee: Yathzee
 
   beforeEach(() => {
