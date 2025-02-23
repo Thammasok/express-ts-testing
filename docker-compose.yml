@@ -12,5 +12,14 @@ services:
     volumes:
       - mongodb_data:/data/db
 
+  api:
+    image: api:latest
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    restart: always
+
 volumes:
   mongodb_data:
