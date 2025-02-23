@@ -2,7 +2,7 @@ import Score, { IScoreInputData, IScoreScheema } from './model/score.model'
 
 class YahtzeeRepository {
   async createScore(score: IScoreInputData): Promise<IScoreScheema> {
-    return await Score.create(score)
+    return await Score.insertOne(score)
   }
 
   async getScoresByGame(game: string): Promise<IScoreScheema[]> {

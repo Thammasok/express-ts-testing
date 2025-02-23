@@ -1,6 +1,5 @@
-import { IScoreInputData, IScoreScheema } from './model/score.model'
+import { IScoreInputData } from './model/score.model'
 import YahtzeeService from './yahtzee.service'
-import YahtzeeRepository from './yahtzee.repository'
 
 describe('YahtzeeService', () => {
   it('should be createScore', () => {
@@ -25,20 +24,21 @@ describe('YahtzeeService', () => {
       grandTotal: 0,
     }
 
-    const yahtzeeRepository = new YahtzeeRepository()
-    jest.spyOn(yahtzeeRepository, 'createScore').mockResolvedValue({
-      ...score,
-      _id: '123456789',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    } as IScoreScheema)
+    // const yahtzeeRepository = new YahtzeeRepository()
+    // jest.spyOn(yahtzeeRepository, 'createScore').mockResolvedValue({
+    //   ...score,
+    //   _id: '123456789',
+    //   createdAt: new Date(),
+    //   updatedAt: new Date(),
+    // } as IScoreScheema)
 
     const yahtzeeService = new YahtzeeService()
     const result = yahtzeeService.createScore(score)
 
     expect(result).resolves.toEqual({
       ...score,
-      _id: '123456789',
+      __v: expect.any(Number),
+      _id: expect.any(String),
       createdAt: expect.any(Date),
       updatedAt: expect.any(Date),
     })

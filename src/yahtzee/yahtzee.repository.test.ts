@@ -30,7 +30,7 @@ describe('YahtzeeRepository', () => {
       grandTotal: 0,
     }
 
-    const scoreSpy = jest.spyOn(Score, 'create').mockResolvedValue({
+    const scoreSpy = jest.spyOn(Score, 'insertOne').mockResolvedValue({
       _id: '123456789',
       ...score,
       createdAt: new Date(),
