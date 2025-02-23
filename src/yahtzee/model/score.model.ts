@@ -1,6 +1,8 @@
 import mongoose, { Schema, Document } from 'mongoose'
 
-export interface IScore extends Document {
+export interface IScoreInputData {
+  game: string
+  player: string
   ones: number
   twos: number
   threes: number
@@ -17,13 +19,16 @@ export interface IScore extends Document {
   upperTotal: number
   lowerTotal: number
   grandTotal: number
-  player: Schema.Types.ObjectId
+}
+export interface IScoreScheema extends IScoreInputData, Document {
   createdAt: Date
   updatedAt: Date
 }
 
 const ScoreSchema: Schema = new Schema(
   {
+    game: { type: String, required: true },
+    player: { type: String, required: true },
     ones: { type: Number, default: 0 },
     twos: { type: Number, default: 0 },
     threes: { type: Number, default: 0 },
@@ -40,11 +45,10 @@ const ScoreSchema: Schema = new Schema(
     upperTotal: { type: Number, default: 0 },
     lowerTotal: { type: Number, default: 0 },
     grandTotal: { type: Number, default: 0 },
-    player: { type: Schema.Types.ObjectId, ref: 'Player', required: true },
   },
   {
     timestamps: true,
   },
 )
 
-export default mongoose.model<IScore>('Score', ScoreSchema)
+export default mongoose.model<IScoreScheema>('Score', ScoreSchema)
