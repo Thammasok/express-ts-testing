@@ -13,7 +13,7 @@ describe('YahtzeeRepository', () => {
     
   })
 
-  it('should be created', async () => {
+  it('should be created via mock', async () => {
     const score: IScoreInputData = {
       game: 'game1',
       player: 'player1',
