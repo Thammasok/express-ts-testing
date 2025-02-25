@@ -1,0 +1,26 @@
+{
+  "protocol": "http",
+  "port": 8090,
+  "name": "todo-api",
+  "stubs": [
+    {
+      "predicates": [
+        { "equals": { "method": "GET", "path": "/todos/1" } }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 200,
+            "headers": { "Content-Type": "application/json" },
+            "body": {
+              "userId": 1,
+              "id": 1,
+              "title": "delectus aut autem",
+              "completed": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

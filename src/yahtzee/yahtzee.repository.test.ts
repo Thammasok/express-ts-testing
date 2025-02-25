@@ -1,3 +1,4 @@
+import { execSync } from 'child_process'
 import Score, { IScoreInputData, IScoreScheema } from './model/score.model'
 import YahtzeeRepository from './yahtzee.repository'
 
@@ -6,6 +7,10 @@ jest.mock('./model/score.model')
 describe('YahtzeeRepository', () => {
   afterEach(() => {
     jest.clearAllMocks()
+  })
+
+  beforeEach(() => {
+    
   })
 
   it('should be created', async () => {
@@ -41,6 +46,39 @@ describe('YahtzeeRepository', () => {
     const result = await yahtzeeRepository.createScore(score)
 
     expect(scoreSpy).toHaveBeenCalledWith(score)
+    expect(result).toEqual({
+      _id: '123456789',
+      ...score,
+      createdAt: expect.any(Date),
+      updatedAt: expect.any(Date),
+    })
+  })
+
+  it('should be created on database', async () => {
+    const score: IScoreInputData = {
+      game: 'game1',
+      player: 'player1',
+      ones: 1,
+      twos: 0,
+      threes: 0,
+      fours: 0,
+      fives: 0,
+      sixes: 0,
+      threeOfAKind: 0,
+      fourOfAKind: 0,
+      fullHouse: 0,
+      smallStraight: 0,
+      largeStraight: 0,
+      yahtzee: 0,
+      chance: 0,
+      upperTotal: 1,
+      lowerTotal: 0,
+      grandTotal: 0,
+    }
+
+    const yahtzeeRepository = new YahtzeeRepository()
+    const result = await yahtzeeRepository.createScore(score)
+
     expect(result).toEqual({
       _id: '123456789',
       ...score,
